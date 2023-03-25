@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  express-url-scraper:
+    container_name: express-url-scraper-container
+    image: express-url-scraper:latest
+    build: .
+    ports:
+      - "3000:3000"
+    command: yarn start

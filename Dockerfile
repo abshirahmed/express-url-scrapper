@@ -1,4 +1,4 @@
-FROM node:lts
+FROM node:lts-alpine
 
 WORKDIR /usr/src/app
 
@@ -8,8 +8,6 @@ RUN yarn install --frozen-lockfile
 
 COPY . .
 
-EXPOSE 8080
-
 RUN yarn build
 
-CMD [ "yarn", "start" ]
+EXPOSE 3000

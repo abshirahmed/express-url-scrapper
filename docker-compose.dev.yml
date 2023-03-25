@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  express-url-scraper:
+    extends:
+      service: express-url-scraper
+      file: docker-compose.yml
+    volumes:
+      - .:/usr/src/app/
+      - /usr/src/app/node_modules
+    ports:
+      - "9229:9229"
+    command: yarn dev
