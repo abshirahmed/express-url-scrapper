@@ -1,8 +1,15 @@
 node_modules
 .editorconfig
 .eslintrc.js
-.gitignore
+.*ignore
 .prettierrc
 jest.config.js
 tests
-README.md
+*.md
+build
+.idea
+.vscode
+.git
+.env
+docker-compose*.yml
+Dockerfile*
