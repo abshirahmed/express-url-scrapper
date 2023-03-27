@@ -146,7 +146,7 @@ docker-compose -f docker-compose.dev.yml up
 - [Express](https://expressjs.com/) - Web framework
 - [TypeScript](https://www.typescriptlang.org/) - Programming language
 - [Axios](https://axios-http.com/) - HTTP client
-- [Cheerio](https://cheerio.js.org/) - HTML parser
+- [Fast HTML Parser](https://github.com/taoqf/node-html-parser) - HTML parser
 - [Pino](https://getpino.io/) - Logging framework
 - [Jest](https://jestjs.io/) - Testing framework
 - [MSW](https://mswjs.io/) - API mocking
