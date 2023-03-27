@@ -4,7 +4,8 @@ A simple, lightweight, and efficient URL crawler API built with Node.js, Express
 the crawler visits each URL it finds on the same domain, printing each URL visited alongside a list of links found on
 that page. The crawler is limited to one subdomain to prevent crawling external links.
 
-_Note: This api currently only supports crawling static websites. It does not support crawling dynamic websites that require authentication or use JavaScript to render content._
+_Note: This api currently only supports crawling static websites. It does not support crawling dynamic websites that
+require authentication or use JavaScript to render content._
 
 ### Features
 
@@ -59,36 +60,50 @@ yarn build
 yarn start
 ```
 
-The API should now be running on port `http://localhost:3000`. You can test it by sending a `POST` request to the `/crawl` endpoint with the starting URL as a parameter. 
+The API should now be running on port `http://localhost:3000`. You can test it by sending a `POST` request to
+the `/crawl` endpoint with the starting URL as a parameter.
 
 ### Usage
 
-The API exposes a single endpoint, `/crawl`, which accepts a `POST` request with a single parameter, `url`, which is the starting URL for the crawler. To crawl a website, send a POST request to the /crawl endpoint with the following JSON payload:
+The API exposes a single endpoint, `/crawl`, which accepts a `POST` request with a single parameter, `url`, which is the
+starting URL for the crawler. To crawl a website, send a POST request to the /crawl endpoint with the following JSON
+payload:
 
 ```json
 {
   "url": "https://www.example.com"
 }
 ```
-Replace https://example.com with the URL you want to start crawling. The API will respond with a list of visited URLs and the links found on each page, limited to the specified subdomain.
+
+Replace https://example.com with the URL you want to start crawling. The API will respond with a list of visited URLs
+and the links found on each page, limited to the specified subdomain.
 
 #### Example response:
-  
+
   ```json
-  {
-  "https://example.com": [
-    "https://example.com/about",
-    "https://example.com/contact"
-  ],
-  "https://example.com/about": [
-    "https://example.com",
-    "https://example.com/contact"
-  ],
-  "https://example.com/contact": [
-    "https://example.com",
-    "https://example.com/about"
+  [
+    {
+      "url": "https://example.com",
+      "links": [
+        "https://example.com/about",
+        "https://example.com/contact"
+      ]
+    },
+    {
+      "url": "https://example.com/about",
+      "links": [
+        "https://example.com",
+        "https://example.com/contact"
+      ]
+    },
+    {
+      "url": "https://example.com/contact",
+      "links": [
+        "https://example.com",
+        "https://example.com/about"
+      ]
+    }
   ]
-}
   ```
 
 ### Running tests
@@ -124,7 +139,6 @@ To run the Docker container in `dev` mode, run the following command:
 ```shell
 docker-compose -f docker-compose.dev.yml up
 ```
-
 
 ### Built With
 

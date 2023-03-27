@@ -6,7 +6,7 @@ export const crawler = async (
   domain: string,
   extractedUrls: Map<string, string[]>
 ): Promise<Map<string, string[]>> => {
-  if (extractedUrls.has(url)) return extractedUrls;
+  if (extractedUrls.has(url)) return new Map();
 
   const links = await extractLinks(url, domain);
 
