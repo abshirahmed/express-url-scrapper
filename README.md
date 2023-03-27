@@ -4,6 +4,8 @@ A simple, lightweight, and efficient URL crawler API built with Node.js, Express
 the crawler visits each URL it finds on the same domain, printing each URL visited alongside a list of links found on
 that page. The crawler is limited to one subdomain to prevent crawling external links.
 
+_Note: This api currently only supports crawling static websites. It does not support crawling dynamic websites that require authentication or use JavaScript to render content._
+
 ### Features
 
 - Crawls all pages within a single subdomain.
