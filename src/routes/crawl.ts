@@ -19,11 +19,10 @@ router.post('/', async (req: Request, res: Response) => {
   logger.info(`Total Pages Visited: ${totalPagesVisited} pages`);
   logger.info(`Total Links Found: ${totalLinksFound} links`);
 
-  const response = {
-    totalPagesVisited,
-    totalLinksFound,
-    extractedUrls: Object.fromEntries(extractedUrls)
-  };
+  const response = Array.from(extractedUrls).map(([url, links]) => ({
+    url,
+    links
+  }));
 
   res.json(response);
 });

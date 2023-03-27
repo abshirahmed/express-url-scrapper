@@ -50,6 +50,10 @@ const blog1PageHandler = rest.get(URL + '/blogs/1', (req, res, ctx) => {
 });
 
 const blog2PageHandler = rest.get(URL + '/blogs/2', (req, res, ctx) => {
+  return res(ctx.status(200));
+});
+
+const blog3PageHandler = rest.get(URL + '/blogs/3', (req, res, ctx) => {
   return res(ctx.status(404));
 });
 export const handlers = [
@@ -57,5 +61,6 @@ export const handlers = [
   aboutPageHandler,
   blogsPageHandler,
   blog1PageHandler,
-  blog2PageHandler
+  blog2PageHandler,
+  blog3PageHandler
 ];
