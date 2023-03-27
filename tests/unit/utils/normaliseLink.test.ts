@@ -18,6 +18,7 @@ describe('normaliseLink', () => {
     { link: 'https://www.monzo.com/file.png', expected: undefined },
     { link: 'https://www.monzo.com/file.gif', expected: undefined },
     { link: 'https://www.monzo.com/file.svg', expected: undefined },
+    { link: 'https://www.monzo.com/file.pdf', expected: undefined },
     {
       link: 'https://www.monzo.com/file.html',
       expected: 'https://monzo.com/file.html'
