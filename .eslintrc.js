@@ -1,5 +1,9 @@
-// eslint-disable-next-line no-undef
 module.exports = {
+  env: {
+    node: true,
+    es6: true,
+    'jest/globals': true
+  },
   root: true,
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'jest', 'prettier'],
