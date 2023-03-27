@@ -19,31 +19,31 @@ describe('POST /crawl', () => {
       totalPagesVisited: 5,
       totalLinksFound: 5,
       extractedUrls: {
-        'https://fake-static-site.com': [
-          'https://fake-static-site.com/about',
-          'https://fake-static-site.com/blogs'
+        'https://example.com': [
+          'https://example.com/about',
+          'https://example.com/blogs'
         ],
-        'https://fake-static-site.com/about': [
-          'https://fake-static-site.com',
-          'https://fake-static-site.com/blogs'
+        'https://example.com/about': [
+          'https://example.com',
+          'https://example.com/blogs'
         ],
-        'https://fake-static-site.com/blogs': [
-          'https://fake-static-site.com',
-          'https://fake-static-site.com/about',
-          'https://fake-static-site.com/blogs/1',
-          'https://fake-static-site.com/blogs/2'
+        'https://example.com/blogs': [
+          'https://example.com',
+          'https://example.com/about',
+          'https://example.com/blogs/1',
+          'https://example.com/blogs/2'
         ],
-        'https://fake-static-site.com/blogs/1': [
-          'https://fake-static-site.com',
-          'https://fake-static-site.com/about',
-          'https://fake-static-site.com/blogs'
+        'https://example.com/blogs/1': [
+          'https://example.com',
+          'https://example.com/about',
+          'https://example.com/blogs'
         ],
-        'https://fake-static-site.com/blogs/2': []
+        'https://example.com/blogs/2': []
       }
     };
 
     const actualResponse = await request.post('/crawl').send({
-      url: 'https://fake-static-site.com'
+      url: 'https://example.com'
     });
 
     expect(actualResponse.status).toEqual(200);
