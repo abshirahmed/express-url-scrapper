@@ -97,6 +97,33 @@ To run the tests, run the following command:
 yarn test
 ```
 
+### Deployment
+
+The project is configured to run in a Docker container. To build the Docker image, run the following command:
+
+```shell
+docker build -t express-url-scrapper .
+``` 
+
+To run the Docker container, run the following command:
+
+```shell
+docker run -p 3000:3000 express-url-scrapper
+```
+
+Alternatively, you can use Docker Compose to run the project. To do so, run the following command:
+
+```shell
+docker-compose up
+```
+
+To run the Docker container in `dev` mode, run the following command:
+
+```shell
+docker-compose -f docker-compose.dev.yml up
+```
+
+
 ### Built With
 
 - [Node.js](https://nodejs.org/en/) - JavaScript runtime
