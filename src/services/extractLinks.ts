@@ -4,7 +4,7 @@ import { fetcher } from '../utils/fetcher';
 
 export const extractLinks = async (
   url: string,
-  domain: string
+  domain = url
 ): Promise<string[]> => {
   const page = await fetcher(url);
   const $ = load(page);
